@@ -94,7 +94,7 @@ public:
     enableNetworkMonitoring: false
     packetLostThreshold: 10
   kurento:
-    wsUrl: HOST
+    wsUrl: wss://bbbtest.amber-sm.com/bbb-webrtc-sfu
     # Valid for video-provider. Time (ms) before its WS connection times out
     # and tries to reconnect.
     wsConnectionTimeout: 4000
@@ -113,13 +113,13 @@ public:
       constraints:
         video:
           frameRate:
-            ideal: 5
-            max: 10
+            ideal: 15
+            max: 20
           width:
-            max: 2560
+            max: 1920
           height:
-            max: 1600
-        audio: false
+            max: 1200
+        audio: true
       chromeScreenshareSources:
         - window
         - screen
