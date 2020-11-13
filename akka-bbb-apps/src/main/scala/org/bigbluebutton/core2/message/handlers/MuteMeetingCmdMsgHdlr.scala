@@ -54,8 +54,9 @@ trait MuteMeetingCmdMsgHdlr extends RightsManagementTrait {
 
         outGW.send(meetingMutedEvent)
 
-        // We no longer want to unmute users when meeting mute is turned off
-        if (muted) {
+        // ORIGINAL COMMENT: We no longer want to unmute users when meeting mute is turned off
+        // NEW COMMENT: We (Amber) want to allow mods to mute and unmute all users
+        if (true) {
           VoiceUsers.findAll(liveMeeting.voiceUsers) foreach { vu =>
             if (!vu.listenOnly) {
               muteUserInVoiceConf(vu, muted)

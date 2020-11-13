@@ -29,8 +29,9 @@ trait MuteAllExceptPresentersCmdMsgHdlr extends RightsManagementTrait {
 
         outGW.send(event)
 
-        // We no longer want to unmute users when meeting mute is turned off
-        if (muted) {
+        // ORIGINAL COMMENT: We no longer want to unmute users when meeting mute is turned off
+        // NEW COMMENT: We (Amber) want to allow mods to mute/unmute all users
+        if (true) {
           // I think the correct flow would be to find those who are presenters and exclude them
           // from the list of voice users. The remaining, mute.
           VoiceUsers.findAll(liveMeeting.voiceUsers) foreach { vu =>
